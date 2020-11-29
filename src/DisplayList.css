@@ -1,0 +1,31 @@
+.allItems{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.cartItems{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+h2{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+h3{
+    margin-right: 10px;
+}
+
+.cartTotal{
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
