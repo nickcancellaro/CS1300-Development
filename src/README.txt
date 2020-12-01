@@ -1,0 +1,9 @@
+Component Organization:
+I first have an App.js file, which contains all classes. This renders the FilteredList.js file, which is passed that full list of classes. FilteredList renders the buttons for filtering/sorting. Its state contains the properties of how the list is currently being filtered/sorted, and the current list of classes. When a button is clicked these state properties are updated, and a function is called that changes the whole list of classes based on the current properties. The list of classes in the state is then changed to this list, which is passed to DisplayList.js. DisplayList has functions that create an visual for a class. This function is mapped over the list of classes passed into it. DisplayList also has a cart in its state. Each class has a button, which will add it to this cart in the state when pressed. DisplayList renders the cart list after the full list of classes. The cart items have a "remove" button, which takes that item out the cart in the state.
+
+How Data is Passed:
+App.js contains all possible classes, which is passed as a property to FilteredList.js. FilteredList than pairs this down to only the classes to display. This is passed to DisplayList.js, which can render it with buttons that modify the cart.
+
+How User Can Interact:
+The user can change two states. In order to change the state of FilteredList, they can select the filter/sort buttons in the navigation bar. This will change the properties in the state of FilteredList, and will change the current list.
+In order to change the cart state, the user can click "Add to Cart" on any of the available classes, or "Remove" on any of the classes currently in their cart.

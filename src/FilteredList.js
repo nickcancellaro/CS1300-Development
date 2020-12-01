@@ -20,7 +20,7 @@ class FilteredList extends Component {
     this.setState({
       sort: "H2L"
     })
-    this.update()
+    this.update(this.state.attr1, this.state.attr2, "H2L")
 
   }
 
@@ -28,68 +28,68 @@ class FilteredList extends Component {
     this.setState({
       sort: "L2H"
     })
-    this.update()
+    this.update(this.state.attr1, this.state.attr2, "L2H")
   }
 
   filter1All = event => {
     this.setState({
       attr1: "All"
     })
-    this.update()
+    this.update("All", this.state.attr2, this.state.sort)
   }
 
   filter1Attr1 = event => {
     this.setState({
       attr1: "1"
     })
-    this.update()
+    this.update("1", this.state.attr2, this.state.sort)
   }
 
   filter1Attr2 = event => {
     this.setState({
       attr1: "2"
     })
-    this.update()
+    this.update("2", this.state.attr2, this.state.sort)
   }
 
   filter1Attr3 = event => {
     this.setState({
       attr1: "3"
     })
-    this.update()
+    this.update("3", this.state.attr2, this.state.sort)
   }
 
   filter2All = event => {
     this.setState({
       attr2: "All"
     })
-    this.update()
+    this.update(this.state.attr1, "All", this.state.sort)
   }
 
   filter2Attr1 = event => {
     this.setState({
       attr2: "1"
     })
-    this.update()
+    this.update(this.state.attr1, "1", this.state.sort)
   }
 
   filter2Attr2 = event => {
     this.setState({
       attr2: "2"
     })
-    this.update()
+    this.update(this.state.attr1, "2", this.state.sort)
   }
 
   filter2Attr3 = event => {
     this.setState({
       attr2: "3"
     })
-    this.update()
+    this.update(this.state.attr1, "3", this.state.sort)
   }
 
-  update = event => {
+  update = (attr1, attr2, sort) => {
     let list = this.props.wholeList;
-    switch (this.state.attr1) {
+    switch (attr1) {
       case "1":
         list = list.filter(e => e.attr1 === "CSCI");
         break;
@@ -100,7 +100,7 @@ class FilteredList extends Component {
         list = list.filter(e => e.attr1 === "ENGL");
         break;
     }
-    switch (this.state.attr2) {
+    switch (attr2) {
       case "1":
         list = list.filter(e => e.attr2 === "Small");
         break;
@@ -111,7 +111,7 @@ class FilteredList extends Component {
         list = list.filter(e => e.attr2 === "Large");
         break;
     }
-    switch (this.state.sort) {
+    switch (sort) {
       case "L2H":
         list = list.sort((a, b) => (a.sort > b.sort) ? 1 : -1);
         break;

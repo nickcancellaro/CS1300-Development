@@ -15,7 +15,10 @@ class DisplayList extends Component {
 
     addCart = item => {
         if (this.state.cart.filter(i => i.name === item.name).length === 0) {
-            this.state.cart.push(item);
+            let cart = this.state.cart.concat(item);
+            this.setState({
+                cart
+            })
         }
     }
 
@@ -32,9 +35,10 @@ class DisplayList extends Component {
                 <Card.Img variant="top" src={item.img} />
                 <Card.Title>{item.name}</Card.Title>
                 <ListGroup variant="flush">
-                    <ListGroup.Item>{item.attr1}</ListGroup.Item>
-                    <ListGroup.Item>{item.attr2}</ListGroup.Item>
-                    <ListGroup.Item>{item.sort}</ListGroup.Item>
+                    <ListGroup.Item>Department: {item.attr1}</ListGroup.Item>
+                    <ListGroup.Item>Size: {item.attr2}</ListGroup.Item>
+                    <ListGroup.Item>Number: {item.sort}</ListGroup.Item>
+                    <ListGroup.Item>Hours/Week: {item.time}</ListGroup.Item>
                 </ListGroup>
                 <Button onClick={() => this.addCart(item)}>Add to Cart</Button>
             </Card>
@@ -46,9 +50,10 @@ class DisplayList extends Component {
             <Card style={{ width: '18rem' }}>
                 <Card.Title>{item.name}</Card.Title>
                 <ListGroup variant="flush">
-                    <ListGroup.Item>{item.attr1}</ListGroup.Item>
-                    <ListGroup.Item>{item.attr2}</ListGroup.Item>
-                    <ListGroup.Item>{item.sort}</ListGroup.Item>
+                    <ListGroup.Item>Department: {item.attr1}</ListGroup.Item>
+                    <ListGroup.Item>Size: {item.attr2}</ListGroup.Item>
+                    <ListGroup.Item>Number: {item.sort}</ListGroup.Item>
+                    <ListGroup.Item>Hours/Week: {item.time}</ListGroup.Item>
                 </ListGroup>
                 <Button onClick={() => this.removeCart(item)}>Remove</Button>
             </Card>
