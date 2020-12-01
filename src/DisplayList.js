@@ -13,6 +13,7 @@ class DisplayList extends Component {
         };
     }
 
+    /* Function that takes an item and adds that item to the cart in state */
     addCart = item => {
         if (this.state.cart.filter(i => i.name === item.name).length === 0) {
             let cart = this.state.cart.concat(item);
@@ -22,6 +23,7 @@ class DisplayList extends Component {
         }
     }
 
+    /* Function that takes an item and removes that item from the cart in state */
     removeCart = item => {
         const cart = this.state.cart.filter(i => i.name !== item.name);
         this.setState({
@@ -29,6 +31,7 @@ class DisplayList extends Component {
         })
     }
 
+    /* Function that takes an item and outputs the html to create the image*/
     createItem = item => {
         return (
             <Card style={{ width: '18rem' }}>
@@ -45,6 +48,7 @@ class DisplayList extends Component {
         );
     }
 
+    /* Function that takes an item and outputs the html to create the image for the cart */
     createCartItem = item => {
         return (
             <Card style={{ width: '18rem' }}>

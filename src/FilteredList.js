@@ -16,6 +16,7 @@ class FilteredList extends Component {
     };
   }
 
+  /* Functions that change the state based on each possible button press, and then call update */
   sortH2L = event => {
     this.setState({
       sort: "H2L"
@@ -87,6 +88,7 @@ class FilteredList extends Component {
     this.update(this.state.attr1, "3", this.state.sort)
   }
 
+  /* Function that takes in the current state's attributes, edits the whole list down so that it matches */
   update = (attr1, attr2, sort) => {
     let list = this.props.wholeList;
     switch (attr1) {

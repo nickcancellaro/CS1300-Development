@@ -6,6 +6,7 @@ import englBanner from "./englBanner.jpg";
 import mathBanner from "./mathBanner.jpg";
 import csBanner from "./csBanner.jpeg";
 
+/* The list of all possible classes */
 const productList = [
   { name: "An Integrated Introduction", attr1: "CSCI", attr2: "Large", sort: 170, time: 10, img: csBanner },
   { name: "American Misfits", attr1: "ENGL", attr2: "Small", sort: 200, time: 6, img: englBanner },
